@@ -1,0 +1,72 @@
+/* --root {
+one:#FEF0F1;
+one:#F4868D;
+one:#EB2936;
+one:#9F0F18;
+one:#360A0D;
+} */
+@import-normalize;
+@font-face {
+  font-family: IRANSans;
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/font/eot/IRANSansWeb_Medium.eot");
+  src: url("../assets/font/eot/IRANSansWeb_Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/font/woff2/IRANSansWeb_Medium.woff2") format("woff2"),
+    url("../assets/font/woff/IRANSansWeb_Medium.woff") format("woff"),
+    url("../assets/font/ttf/IRANSansWeb_Medium.ttf") format("truetype");
+}
+/* @font-face {
+  font-family: IRANSansb;
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/font/eot/IRANSansWeb_Bold.eot");
+  src: url("../assets/font/eot/IRANSansWeb_Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/font/woff2/IRANSansWeb_Bold.woff2") format("woff2"),
+    url("../assets/font/woff/IRANSansWeb_Bold.woff") format("woff"),
+    url("../assets/font/ttf/IRANSansWeb_Bold.ttf") format("truetype");
+} */
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  font-family: IRANSans !important;
+  font-weight: 300;
+  /* direction: rtl; */
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea {
+  font-family: IRANSans !important;
+}
+h1 {
+  font-weight: bold;
+  margin: 0px;
+}
+ul,
+li,
+a {
+  list-style: none;
+  text-decoration: none;
+}
+del {
+  color: red;
+}
+.slick-arrow {
+  display: none !important;
+}
+.slick-list {
+  padding-bottom: 15px !important;
+}
