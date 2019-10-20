@@ -10,14 +10,16 @@ import HeaderBottom from "./components/header/headerBottom";
 import styled from "styled-components";
 
 export let ContextProject = React.createContext();
-
+// var pagex = 0;
+// var pagey = 0;
 function App() {
   // const [cartFil, setcartFil] = useState([]);
 
   const [cart, setcart] = useState([]);
   const [addCart, setaddCart] = useState(false);
   const [tekrari, settekrari] = useState(true);
-  const [page, setpage] = useState({ pagey: 0, pagex: 0 });
+  // const [page, setpage] = useState({ pagey: 0, pagex: 0 });
+  // const [page, setpage] = useState([]);
   const handleAddToCart = (data, dataName) => {
     // setcart([...cart, data]);
     const mosavi = cart.filter(cart => cart.name === data.name);
@@ -154,37 +156,33 @@ function App() {
     );
   };
   // console.log(topDataNew);
-  let handleMosePosition = e => {
-    setpage({ pagex: e.pageX, pagey: e.pageY });
-    // let pagex = e.pageX;
-    // let pagey = e.pageY;
-    // console.log("x" + page.pagex);
-    // console.log("y" + page.pagey);
-    // console.log(e.pageX, e.pageY);
-  };
-  window.addEventListener("click", handleMosePosition, false);
+  // let handleMosePosition = e => {
+  // setpage({ pagex: e.pageX, pagey: e.pageY });
+  // delete setpage([page]);
+  // }
+  //  let arr = [...page];
+  // let index = arr.indexOf(e.target.value);
+  // if (index !== -1) {
+  //   arr.splice(0, 1, index);
+  // setpage(page.splice(0, 1));
+  // setpage([...e.pageX.filter(item => item !== e.target.value)]);
+  // let pagex = e.pageX;
+  // let pagey = e.pageY;
+  // console.log("x" + page);
+  // console.log("y" + page.pagey);
+  // console.log(e.pageX, e.pageY);
+  // };
+
+  // let handleMosePosition = e => {
+  //   window.pagex = e.pageX;
+  //   window.pagey = e.pageY;
+  // };
+  // console.log(pagex);
+  // console.log(pagey);
+  // window.addEventListener("click", handleMosePosition, false);
   // window.addEventListener("mouseenter", handleMosePosition, false);
   // window.addEventListener("mouseleave", handleMosePosition, false);
 
-  const AlertAddToCart = styled.div`
-    position: absolute;
-    top: ${props => props.pagex};
-    right: ${props => props.pagey};
-    padding: 20px;
-    z-index: 333333333333;
-    display: ${props =>
-      props.addCart
-        ? "visibled"
-        : // &&
-          // setTimeout(() => {
-          // "none";
-          // }, 1000)
-          "none"};
-    /* border: 2px solid green; */
-    border-radius: 3px;
-    color: green;
-    background-color: rgba(255, 255, 255, 0.9);
-  `;
   return (
     <ContextProject.Provider
       value={{
@@ -197,19 +195,16 @@ function App() {
         handleAddToCart: handleAddToCart,
         handleDeleteItemCart: handleDeleteItemCart,
         handleIncrimentCartItem: handleIncrimentCartItem,
-        handleDecrimentCartItem: handleDecrimentCartItem
+        handleDecrimentCartItem: handleDecrimentCartItem,
+        addCart: addCart,
+        tekrari: tekrari
       }}
     >
       {/* <button onClick={click}>clikh</button> */}
+
       <HeaderTop />
       <HeaderBottom />
-      <AlertAddToCart addCart={addCart} pagex={page.pagex} pagey={page.pagey}>
-        {tekrari ? (
-          <p>محصول به سبد خرید اضافه شد</p>
-        ) : (
-          <p>محصول در سبد خرید موجود است</p>
-        )}
-      </AlertAddToCart>
+
       <RouteComponent />
     </ContextProject.Provider>
   );

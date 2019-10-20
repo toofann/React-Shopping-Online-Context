@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled, { keyframes } from "styled-components/macro";
 import { ReactComponent as menuSvg } from "../../assets/img/icon/iconMenu.svg";
+import { ReactComponent as closeSvg } from "../../assets/img/icon/iconclose.svg";
 // const WidthMenuAnimation = keyframes`
 //  from{
 //   width:0px;
@@ -27,6 +28,7 @@ const UlComponent = styled.ul.attrs(props => {})`
   top: 0px;
   right: 0px;
   padding: 0px;
+  padding-bottom: 20px;
   font-size: 17px;
   direction: rtl;
   white-space: nowrap;
@@ -89,10 +91,22 @@ const DropdownMenu = styled.span`
   cursor: pointer;
   color: #393d38;
   &::after {
-    content: " >";
+    content: "\fe3f";
+    color: black;
+    padding: 8px;
+    /* vertical-align: -5px; */
   }
 `;
-
+const DropdownMenuOpen = styled.span`
+  cursor: pointer;
+  color: #393d38;
+  &::after {
+    content: "\fe40";
+    color: black;
+    padding: 8px;
+    vertical-align: -5px;
+  }
+`;
 const Dropdown = styled.div.attrs(props => {})`
   overflow: hidden;
   height: ${props => (props.open ? "160px" : "0px")};
@@ -123,8 +137,9 @@ const DropdownItem = styled(Link)`
   }
 `;
 const CloseMenu = styled.span`
-  font-size: 40px;
-  color: red;
+  /* font-size: 40px; */
+  width: 40px;
+  height: 40px;
   float: left;
   padding-left: 10px;
   cursor: pointer;
@@ -153,12 +168,26 @@ const Menu = props => {
       <MenuIcon as={menuSvg} onClick={handleOpenMenu} />
       {/* {openMenu ? ( */}
       <UlComponent openMenu={openMenu}>
-        <CloseMenu onClick={handleCloseMenu}>x</CloseMenu>
+        <CloseMenu as={closeSvg} onClick={handleCloseMenu}></CloseMenu>
         <MenuItem handleCloseMenu={handleCloseMenu}>
           <Link to={"/"}>خانه</Link>
         </MenuItem>
         <li>
-          <DropdownMenu onClick={handleDropdownOpenItem}>محصولات</DropdownMenu>
+          {openDropDown ? (
+            <DropdownMenu
+              onClick={handleDropdownOpenItem}
+              openDropDown={openDropDown}
+            >
+              محصولات
+            </DropdownMenu>
+          ) : (
+            <DropdownMenuOpen
+              onClick={handleDropdownOpenItem}
+              openDropDown={openDropDown}
+            >
+              محصولات
+            </DropdownMenuOpen>
+          )}
           <Dropdown open={openDropDown}>
             <DropdownItem to={"/shoe"}>کفش</DropdownItem>
             <DropdownItem to={"/socks"}>جوراب</DropdownItem>

@@ -17,12 +17,18 @@ const Search = () => {
   const handleClickInput = () => {
     setInputValue("");
   };
+  const handleBlur = () => {
+    if (inputValue === "") {
+      setInputValue("جست و جو کنید");
+    }
+  };
 
   return (
     <InputSearch
       value={inputValue}
       onChange={handelCangeInput}
       onClick={handleClickInput}
+      onBlur={handleBlur}
       //   placeholder="جست و جو کنید"
     />
   );
