@@ -18,35 +18,40 @@ export const sunglassData = [
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: sunglass1
+    img: sunglass1,
+    new: true
   },
   {
     name: "sunglass2",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: sunglass2
+    img: sunglass2,
+    new: true
   },
   {
     name: "sunglass3",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: sunglass3
+    img: sunglass3,
+    new: true
   },
   {
     name: "sunglass4",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: sunglass4
+    img: sunglass4,
+    new: true
   },
   {
     name: "sunglass5",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: sunglass5
+    img: sunglass5,
+    new: true
   },
   {
     name: "sunglass6",

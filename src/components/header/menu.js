@@ -18,7 +18,7 @@ import { ReactComponent as closeSvg } from "../../assets/img/icon/iconclose.svg"
 // width:0px;
 //  }
 //  `;
-const UlComponent = styled.ul.attrs(props => {})`
+const UlComponent = styled.ul`
   width: ${props => (props.openMenu ? "45%" : "0px")};
   background-color: rgba(250, 250, 250, 0.95);
   overflow: hidden;
@@ -107,7 +107,7 @@ const DropdownMenuOpen = styled.span`
     vertical-align: -5px;
   }
 `;
-const Dropdown = styled.div.attrs(props => {})`
+const Dropdown = styled.div`
   overflow: hidden;
   height: ${props => (props.open ? "160px" : "0px")};
   transition: height 0.7s ease-out 0s;
@@ -119,7 +119,11 @@ const Dropdown = styled.div.attrs(props => {})`
   position: relative;
 `;
 
-const DropdownItem = styled(Link)`
+const DropdownItem = styled(Link).attrs(props => {
+  return {
+    // onClick: () => props.handleCloseMenu()
+  };
+})`
   font-size: 14px;
   padding-top: 20px;
   display: block;
@@ -189,17 +193,25 @@ const Menu = props => {
             </DropdownMenuOpen>
           )}
           <Dropdown open={openDropDown}>
-            <DropdownItem to={"/shoe"}>کفش</DropdownItem>
-            <DropdownItem to={"/socks"}>جوراب</DropdownItem>
-            <DropdownItem to={"/t-shirt"}>تیشرت</DropdownItem>
-            <DropdownItem to={"/sunglasse"}>عینک</DropdownItem>
+            <DropdownItem to={"/shoe"} onClick={handleCloseMenu}>
+              کفش
+            </DropdownItem>
+            <DropdownItem to={"/socks"} onClick={handleCloseMenu}>
+              جوراب
+            </DropdownItem>
+            <DropdownItem to={"/tshirt"} onClick={handleCloseMenu}>
+              تیشرت
+            </DropdownItem>
+            <DropdownItem to={"/sunglass"} onClick={handleCloseMenu}>
+              عینک
+            </DropdownItem>
           </Dropdown>
         </li>
         <MenuItem handleCloseMenu={handleCloseMenu}>
           <Link to={"/cart"}>سبد خرید</Link>
         </MenuItem>
         <MenuItem handleCloseMenu={handleCloseMenu}>
-          <Link to={"/login"}>عضویت</Link>
+          <Link to={"/login"}>ورود / عضویت</Link>
         </MenuItem>
         <MenuItem handleCloseMenu={handleCloseMenu}>
           <Link to={"/darbare"}>درباره ما</Link>

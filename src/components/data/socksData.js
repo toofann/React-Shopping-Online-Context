@@ -18,35 +18,40 @@ export const socksData = [
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: socks1
+    img: socks1,
+    new: true
   },
   {
     name: "socks2",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: socks2
+    img: socks2,
+    new: true
   },
   {
     name: "socks3",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: socks3
+    img: socks3,
+    new: true
   },
   {
     name: "socks4",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: socks4
+    img: socks4,
+    new: true
   },
   {
     name: "socks5",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: socks5
+    img: socks5,
+    new: true
   },
   {
     name: "socks6",

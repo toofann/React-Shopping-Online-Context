@@ -34,7 +34,8 @@ export const tshirtData = [
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: tshirt3
+    img: tshirt3,
+    new: true
   },
   {
     name: "t-shirt4",
@@ -48,21 +49,24 @@ export const tshirtData = [
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: tshirt5
+    img: tshirt5,
+    new: true
   },
   {
     name: "t-shirt6",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: tshirt6
+    img: tshirt6,
+    new: true
   },
   {
     name: "t-shirt7",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: tshirt7
+    img: tshirt7,
+    new: true
   },
   {
     name: "t-shirt8",

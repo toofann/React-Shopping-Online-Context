@@ -19,35 +19,40 @@ export const shoeData = [
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: shoe1
+    img: shoe1,
+    new: true
   },
   {
     name: "shoe2",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: shoe2
+    img: shoe2,
+    new: true
   },
   {
     name: "shoe3",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: shoe3
+    img: shoe3,
+    new: true
   },
   {
     name: "shoe4",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: shoe4
+    img: shoe4,
+    new: true
   },
   {
     name: "shoe5",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: shoe5
+    img: shoe5,
+    new: true
   },
   {
     name: "shoe6",

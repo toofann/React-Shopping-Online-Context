@@ -5,10 +5,10 @@ import TopProduct from "./topProduct/topProduct";
 
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
-import Sunglass from "./sunglass/sunglass";
-import Shoe from "./shoe/shoe";
-import Tshirt from "./t-shirt/tshirt";
-import Socks from "./socks/socks";
+import SunglassNew from "./newProduct/sunglassNew";
+import ShoeNew from "./newProduct/shoeNew";
+import TshirtNew from "./newProduct/tshirtNew";
+import SocksNew from "./newProduct/socksNew";
 
 const Home = () => {
   // var settings = {
@@ -39,10 +39,10 @@ const Home = () => {
           <h3>4</h3>
         </div> */}
       {/* </Slider> */}
-      <Sunglass />
-      <Shoe />
-      <Tshirt />
-      <Socks />
+      <SunglassNew />
+      <ShoeNew />
+      <TshirtNew />
+      <SocksNew />
     </>
   );
 };

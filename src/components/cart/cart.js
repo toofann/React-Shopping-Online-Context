@@ -93,14 +93,14 @@ const Cart = props => {
   const context = useContext(ContextProject);
   const TotalPayCart = () => {
     return context.cart.reduce((carr, prevValue) => {
-      let newValue = prevValue.newPrice * prevValue.id;
+      let newValue = prevValue.newPrice * prevValue.number;
       return carr + newValue;
     }, 0);
   };
   const TotalOffPayCart = () => {
     return context.cart.reduce((carr, prevValue) => {
       let newOffValue =
-        (prevValue.oldPrice - prevValue.newPrice) * prevValue.id;
+        (prevValue.oldPrice - prevValue.newPrice) * prevValue.number;
       return (carr += newOffValue);
     }, 0);
   };
@@ -127,7 +127,7 @@ const Cart = props => {
             </button>
             <div>
               <p onClick={() => context.handleIncrimentCartItem(index)}> + </p>
-              <span> {cart.id} </span>
+              <span> {cart.number} </span>
               <p onClick={() => context.handleDecrimentCartItem(index)}> - </p>
             </div>
           </section>

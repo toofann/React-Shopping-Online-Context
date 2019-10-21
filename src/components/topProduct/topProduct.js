@@ -69,15 +69,15 @@ const TopProduct = () => {
           <SectionTopDataChild
             to={data.name}
             key={data.name}
-            onClick={() => context.handleAddToCart(data, data.name)}
+            // onClick={() => context.handleAddToCart(data, data.name)}
           >
-            {/* <LinkTopData to={`/${data.name}`}> */}
-            <img src={data.img} alt={data.name} />
-            <h4>{data.name}</h4>
-            <del>{data.oldPrice}</del>
-            <p>{data.newPrice}</p>
-            <span>{onDisplay ? "" : "مشخصات"}</span>
-            {/* </LinkTopData> */}
+            <LinkTopData to={`/topProduct/${data.name}`}>
+              <img src={data.img} alt={data.name} />
+              <h4>{data.name}</h4>
+              <del>{data.oldPrice}</del>
+              <p>{data.newPrice}</p>
+              <span>{onDisplay ? "" : "مشخصات"}</span>
+            </LinkTopData>
           </SectionTopDataChild>
         ))}
       </Slider>

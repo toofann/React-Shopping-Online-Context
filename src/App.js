@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import RouteComponent from "./components/route/route";
 import { shoeData } from "./components/data/shoeData";
 import { socksData } from "./components/data/socksData";
@@ -14,24 +14,72 @@ export let ContextProject = React.createContext();
 // var pagey = 0;
 function App() {
   // const [cartFil, setcartFil] = useState([]);
-
+  const [topDataNew, settopDataNew] = useState(topData);
+  const [shoeDataNew, setshoeDataNew] = useState(shoeData);
+  const [socksDataNew, setsocksDataNew] = useState(socksData);
+  const [sunglassDataNew, setsunglassDataNew] = useState(sunglassData);
+  const [tshirtDataNew, settshirtDataNew] = useState(tshirtData);
   const [cart, setcart] = useState([]);
   const [addCart, setaddCart] = useState(false);
   const [tekrari, settekrari] = useState(true);
+  const [signIn, setsignIn] = useState(false);
   // const [page, setpage] = useState({ pagey: 0, pagex: 0 });
   // const [page, setpage] = useState([]);
+
+  useEffect(() => {
+    settopDataNew(
+      topDataNew.map(item => {
+        return {
+          ...item,
+          number: 1
+        };
+      })
+    );
+    setshoeDataNew(
+      shoeDataNew.map(item => {
+        return {
+          ...item,
+          number: 1
+        };
+      })
+    );
+    setsocksDataNew(
+      socksDataNew.map(item => {
+        return {
+          ...item,
+          number: 1
+        };
+      })
+    );
+    setsunglassDataNew(
+      sunglassDataNew.map(item => {
+        return {
+          ...item,
+          number: 1
+        };
+      })
+    );
+    settshirtDataNew(
+      tshirtDataNew.map(item => {
+        return {
+          ...item,
+          number: 1
+        };
+      })
+    );
+  }, []);
   const handleAddToCart = (data, dataName) => {
     // setcart([...cart, data]);
     const mosavi = cart.filter(cart => cart.name === data.name);
     const namosavi = cart.filter(cart => cart.name !== data.name);
 
     if (mosavi.length > 0) {
-      const updateid = {
+      const updatenumber = {
         ...mosavi[0],
-        id: mosavi[0].id + data.id
+        number: mosavi[0].number + data.number
       };
 
-      setcart([...namosavi, updateid]);
+      setcart([...namosavi, updatenumber]);
       settekrari(false);
     } else {
       setcart([...cart, data]);
@@ -43,6 +91,7 @@ function App() {
         setaddCart(false);
       }, 2000);
     }
+    // console.log(id);
   };
   const handleIncrimentCartItem = index => {
     // console.log(index);
@@ -52,7 +101,7 @@ function App() {
     // };
     setcart(
       cart.map((cart, i) => {
-        if (i === index) return { ...cart, id: cart.id + 1 };
+        if (i === index) return { ...cart, number: cart.number + 1 };
         else return { ...cart };
       })
     );
@@ -63,13 +112,13 @@ function App() {
         if (i === index)
           return {
             ...cart,
-            id: cart.id - 1
+            number: cart.number - 1
           };
         else return { ...cart };
       })
     );
     cart.map((cart, i) => {
-      if (i === index && cart.id < 2) {
+      if (i === index && cart.number < 2) {
         handleDeleteItemCart(index);
       }
     });
@@ -144,17 +193,18 @@ function App() {
     setcart([...cart.slice(0, index), ...cart.slice(index + 1)]);
   };
 
-  const [topDataNew, setDataNew] = useState(topData);
-  const click = () => {
-    setDataNew(
-      topDataNew.map(data => {
-        return {
-          ...data,
-          component: data.name.charAt(0).toUpperCase() + data.name.slice(1)
-        };
-      })
-    );
-  };
+  // const [topDataNew, setDataNew] = useState(topData);
+  // const click = () => {
+  //   setDataNew(
+  //     topDataNew.map(data => {
+  //       return {
+  //         ...data,
+  //         number: 1
+  //       };
+  //     })
+  //   );
+  //   // console.log(topDataNew);
+  // };
   // console.log(topDataNew);
   // let handleMosePosition = e => {
   // setpage({ pagex: e.pageX, pagey: e.pageY });
@@ -182,22 +232,23 @@ function App() {
   // window.addEventListener("click", handleMosePosition, false);
   // window.addEventListener("mouseenter", handleMosePosition, false);
   // window.addEventListener("mouseleave", handleMosePosition, false);
-
   return (
     <ContextProject.Provider
       value={{
-        shoeData: shoeData,
-        socksData: socksData,
-        sunglassData: sunglassData,
-        tshirtData: tshirtData,
-        topData: topData,
+        shoeData: shoeDataNew,
+        socksData: socksDataNew,
+        sunglassData: sunglassDataNew,
+        tshirtData: tshirtDataNew,
+        topData: topDataNew,
         cart: cart,
         handleAddToCart: handleAddToCart,
         handleDeleteItemCart: handleDeleteItemCart,
         handleIncrimentCartItem: handleIncrimentCartItem,
         handleDecrimentCartItem: handleDecrimentCartItem,
         addCart: addCart,
-        tekrari: tekrari
+        tekrari: tekrari,
+        setsignIn: setsignIn,
+        signIn: signIn
       }}
     >
       {/* <button onClick={click}>clikh</button> */}
