@@ -1,23 +1,9 @@
 import React, { useState } from "react";
 import { Link, withRouter } from "react-router-dom";
-import styled, { keyframes } from "styled-components/macro";
+import styled from "styled-components/macro";
 import { ReactComponent as menuSvg } from "../../assets/img/icon/iconMenu.svg";
 import { ReactComponent as closeSvg } from "../../assets/img/icon/iconclose.svg";
-// const WidthMenuAnimation = keyframes`
-//  from{
-//   width:0px;
-//  }
-//  to{
-// width:45%;
-//  }`;
-// const WidthMenuAnimationClose = keyframes`
-//  from{
-//   width:45%;
-//  }
-//  to{
-// width:0px;
-//  }
-//  `;
+
 const UlComponent = styled.ul`
   width: ${props => (props.openMenu ? "45%" : "0px")};
   background-color: rgba(250, 250, 250, 0.95);
@@ -74,18 +60,6 @@ const MenuItem = styled.li.attrs(props => {
 })`
   padding: 20px 10px 0px 0px;
 `;
-// let classNameOpen="open"
-// const Dropdown = styled.div.attrs(openDropDown => {
-//   return {
-//     className: openDropDown ? "open" : "close"
-//   };
-// })`
-//   overflow: hidden;
-//   &${"open"} {
-//     height: 50px;
-//   }
-//   height: ${openDropDown => (openDropDown ? "150px" : "0px")};
-// `;
 
 const DropdownMenu = styled.span`
   cursor: pointer;
@@ -94,7 +68,6 @@ const DropdownMenu = styled.span`
     content: "\fe3f";
     color: black;
     padding: 8px;
-    /* vertical-align: -5px; */
   }
 `;
 const DropdownMenuOpen = styled.span`
@@ -111,19 +84,10 @@ const Dropdown = styled.div`
   overflow: hidden;
   height: ${props => (props.open ? "160px" : "0px")};
   transition: height 0.7s ease-out 0s;
-  /* height: 150px; */
-  /* & {
-} */
-  /* display: inline-block; */
-  /* height:30px; */
   position: relative;
 `;
 
-const DropdownItem = styled(Link).attrs(props => {
-  return {
-    // onClick: () => props.handleCloseMenu()
-  };
-})`
+const DropdownItem = styled(Link)`
   font-size: 14px;
   padding-top: 20px;
   display: block;
@@ -141,7 +105,6 @@ const DropdownItem = styled(Link).attrs(props => {
   }
 `;
 const CloseMenu = styled.span`
-  /* font-size: 40px; */
   width: 40px;
   height: 40px;
   float: left;
@@ -170,7 +133,6 @@ const Menu = props => {
   return (
     <>
       <MenuIcon as={menuSvg} onClick={handleOpenMenu} />
-      {/* {openMenu ? ( */}
       <UlComponent openMenu={openMenu}>
         <CloseMenu as={closeSvg} onClick={handleCloseMenu}></CloseMenu>
         <MenuItem handleCloseMenu={handleCloseMenu}>
@@ -214,15 +176,15 @@ const Menu = props => {
           <Link to={"/login"}>ورود / عضویت</Link>
         </MenuItem>
         <MenuItem handleCloseMenu={handleCloseMenu}>
+          <Link to={"/dashboard"}>داشبورد</Link>
+        </MenuItem>
+        <MenuItem handleCloseMenu={handleCloseMenu}>
           <Link to={"/darbare"}>درباره ما</Link>
         </MenuItem>
         <MenuItem handleCloseMenu={handleCloseMenu}>
           <Link to={"/contact"}>تماس با ما</Link>
         </MenuItem>
       </UlComponent>
-      {/* ) : null} */}
-
-      {/* // </MenuIcon> */}
     </>
   );
 };

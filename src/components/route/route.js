@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "../home";
 import Cart from "../cart/cart";
-// import Login from "../login/login";
 import { ContextProject } from "../../App";
 import ProductView from "../productes/productView";
 import Payment from "../payment/payment";

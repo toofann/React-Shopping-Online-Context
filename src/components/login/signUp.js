@@ -1,9 +1,8 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { Formik, Field, ErrorMessage, Form } from "formik";
 import styled, { css } from "styled-components/macro";
 import * as yup from "yup";
 import { Redirect } from "react-router-dom";
-import { ContextProject } from "../../App";
 const FieldInput = styled(Field)`
   border: none;
   border-bottom: 1px solid #fca0cc;
@@ -36,7 +35,6 @@ const TitleForm = styled.h2`
 const SignUp = () => {
   const [alert, setalert] = useState(false);
   const [saveLogin, setsaveLogin] = useState(false);
-  // const context = useContext(ContextProject);
 
   let CustomErrorMessage = props => {
     return (
@@ -66,7 +64,6 @@ const SignUp = () => {
             setalert(true);
           }, 1000);
           setTimeout(() => {
-            // context.setsignIn(true);/
             handleSetsaveLogin();
           }, 2000);
 

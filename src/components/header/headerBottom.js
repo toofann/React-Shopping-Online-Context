@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
-// import Login from "../login/login";
+import React, { useEffect, useContext } from "react";
 import Search from "./search";
 import styled from "styled-components";
 import { ReactComponent as LoginSvg } from "../../assets/img/icon/iconuser.svg";
@@ -17,7 +16,6 @@ const HeaderComponent = styled.header`
 const HeaderBottom = () => {
   const context = useContext(ContextProject);
   let signInLogin = !!localStorage.getItem("username");
-  // const [signIn, setsignIn] = useState(false);
   useEffect(() => {
     if (signInLogin) {
       context.setsignIn(true);

@@ -1,6 +1,4 @@
 import React from "react";
-import HeaderTop from "./header/headerTop";
-import HeaderBottom from "./header/headerBottom";
 import TopProduct from "./topProduct/topProduct";
 
 // import "slick-carousel/slick/slick.css";

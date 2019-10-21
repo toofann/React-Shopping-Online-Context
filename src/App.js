@@ -7,8 +7,6 @@ import { tshirtData } from "./components/data/tshirtData";
 import { topData } from "./components/data/topProduct";
 import HeaderTop from "./components/header/headerTop";
 import HeaderBottom from "./components/header/headerBottom";
-import styled from "styled-components";
-
 export let ContextProject = React.createContext();
 // var pagex = 0;
 // var pagey = 0;

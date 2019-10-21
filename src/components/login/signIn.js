@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Formik, Field, ErrorMessage, Form } from "formik";
 import styled, { css } from "styled-components/macro";
-import * as yup from "yup";
 import { Redirect, Link } from "react-router-dom";
 import { ContextProject } from "../../App";
 const FieldInput = styled(Field)`
@@ -55,16 +54,10 @@ const TitleForm = styled.h2`
 `;
 const SignIn = () => {
   const [alert, setalert] = useState(false);
-  const [save, setsave] = useState(false);
   const [error, seterror] = useState(false);
   const context = useContext(ContextProject);
   let statusSignUp = !!localStorage.getItem("username");
 
-  // let handlebluruser=()=>{
-  //   if(username ===11111111){
-
-  //   }
-  // }
   let CustomErrorMessage = props => {
     return (
       <ErrorMessage {...props}>
@@ -72,13 +65,7 @@ const SignIn = () => {
       </ErrorMessage>
     );
   };
-  // let emailRegex = new RegExp(/\S+@\S+\.\S+/);
-  // let matchUser = localStorage.getItem("username");
-  // let matchUser = "شششششششش";
-  // let handleLogin = () => {
-  //   setsave(true);
-  //   // setstate(true);
-  // };
+
   if (context.signIn) return <Redirect to="/" />;
   return (
     <div>
@@ -87,11 +74,8 @@ const SignIn = () => {
         initialValues={{
           username: statusSignUp ? localStorage.getItem("username") : "",
           password: statusSignUp ? localStorage.getItem("password") : ""
-          //   email: "",
-          //   passwordConfirmation: ""
         }}
         onSubmit={(values, actions) => {
-          // } else
           setTimeout(() => {
             actions.setSubmitting(false);
           }, 1000);
@@ -102,50 +86,15 @@ const SignIn = () => {
           ) {
             setalert(true);
             seterror(false);
-
             setTimeout(() => {
               context.setsignIn(true);
             }, 1000);
-
-            // console.log("kjsabjbejdfnm");
           } else {
             seterror(true);
           }
-          // //   values.email = "";
-          //     setalert(true);
-
           values.username = "";
           values.password = "";
-          // seterror(true);
-
-          // //   localStorage.setItem("username", values.username);
-          // //   localStorage.setItem("password", values.password);
-
-          //   values.passwordConfirmation = "";
-          // }
         }}
-        // validationSchema={yup.object().shape({
-        //   username: yup
-        //     // .mixed()
-        //     // .oneOf([yup.ref("username"), null], "رمز عبور اشتباه است"),
-        //     .string()
-        //     // .min(3, "نام کابری باید بیش از 3 حرف باشد")
-        //     // .max(16, "نام کاربری باید کمتر از 16 حرف یاشد")
-        //     .matches(matchUser, "نام کاربری اشتباه است"),
-        //   // .required("نام کاربری را پر کنید"),
-        //   //   email: yup
-        //   //     .string()
-        //   //     .required("ایمیل را پر کنید")
-        //   //     .matches(emailRegex, "ایمیل درست نیست"),
-        //   password: yup
-        //     .string()
-        //     .required("رمز عبور را پر کنید")
-        //     .min(8, "رمز ورود باید بیش از 8 حرف باشد")
-        //     .max(16, "رمز ورود باید کمتر از 16 حرف باشد")
-        //   //   passwordConfirmation: yup
-        //   //     .mixed()
-        //   //     .oneOf([yup.ref("password"), null], "رمز عبور اشتباه است")
-        // })}
       >
         {({ isSubmitting }) => (
           <Form
@@ -165,17 +114,12 @@ const SignIn = () => {
               onFocus={() => seterror(false)}
             />
             <CustomErrorMessage name="username"></CustomErrorMessage>
-
-            {/* <Lable htmlFor="email">ایمیل </Lable>
-            <FieldInput type="email" name="email" />
-            <CustomErrorMessage name="email" /> */}
             <Lable htmlFor="password">رمز ورود </Lable>
             <FieldInput
               type="password"
               name="password"
               onFocus={() => seterror(false)}
             />
-
             <CustomErrorMessage name="password"></CustomErrorMessage>
             <div
               css={css`
@@ -194,9 +138,6 @@ const SignIn = () => {
             >
               {alert ? "خوش آمدید" : null}
             </p>
-            {/* <Lable htmlFor="passwordConfirmation">تکرار رمز ورود </Lable>
-            <FieldInput type="password" name="passwordConfirmation" />
-            <CustomErrorMessage name="passwordConfirmation" /> */}
             <div>
               <SubmitForm
                 value="وارد شوید"

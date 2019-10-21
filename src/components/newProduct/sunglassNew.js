@@ -1,9 +1,8 @@
-import React, { Component, useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { ContextProject } from "../../App";
 import styled from "styled-components";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-
 const SectionTopData = styled.main`
   padding: 40px 0px;
   text-align: center;
@@ -52,7 +51,6 @@ const SunglassNew = () => {
     pauseOnHover: true
   };
   const context = useContext(ContextProject);
-  const [onDisplay, setonDisplay] = useState(false);
   // let inter = setInterval(() => {
   //   setonDisplay(!onDisplay);
   //   clearInterval(inter);
@@ -72,7 +70,7 @@ const SunglassNew = () => {
                 <h5>{data.name}</h5>
                 <del>{data.oldPrice}</del>
                 <p>{data.newPrice}</p>
-                <span>{onDisplay ? "" : "مشخصات"}</span>
+                <span>مشخصات</span>
               </LinkTopData>{" "}
             </SectionTopDataChild>
           ))}

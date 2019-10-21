@@ -1,4 +1,4 @@
-import React, { Component, useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { ContextProject } from "../../App";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
@@ -54,7 +54,6 @@ const TopProduct = () => {
     arrow: false
   };
   const context = useContext(ContextProject);
-  const [onDisplay, setonDisplay] = useState(false);
   // let inter = setInterval(() => {
   //   setonDisplay(!onDisplay);
   //   clearInterval(inter);
@@ -76,7 +75,7 @@ const TopProduct = () => {
               <h4>{data.name}</h4>
               <del>{data.oldPrice}</del>
               <p>{data.newPrice}</p>
-              <span>{onDisplay ? "" : "مشخصات"}</span>
+              <span>مشخصات</span>
             </LinkTopData>
           </SectionTopDataChild>
         ))}

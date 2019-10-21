@@ -11,25 +11,16 @@ import {
 import { ContextProject } from "../../App";
 
 const AlertAddToCart = styled.div`
-    position: absolute;
-    top:0px;
-    /* right: ${props => props.pagey}; */
-    right:0px;
-    padding: 20px;
-    z-index: 333333333333;
-    display: ${props =>
-      props.addCart
-        ? "visibled"
-        : // &&
-          // setTimeout(() => {
-          // "none";
-          // }, 1000)
-          "none"};
-    /* border: 2px solid green; */
-    border-radius: 3px;
-    color: green;
-    background-color: rgba(255, 255, 255, 0.9);
-  `;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 20px;
+  z-index: 333333333333;
+  display: ${props => (props.addCart ? "visibled" : "none")};
+  border-radius: 3px;
+  color: green;
+  background-color: rgba(255, 255, 255, 0.9);
+`;
 const HeaderTop = () => {
   const context = useContext(ContextProject);
   return (
@@ -52,11 +43,7 @@ const HeaderTop = () => {
         <LogoIcon>مای شاپ</LogoIcon>
       </Link>
       <Menu />
-      <AlertAddToCart
-        addCart={context.addCart}
-        // pagex={page}
-        //  pagey={page.pagey}
-      >
+      <AlertAddToCart addCart={context.addCart}>
         {context.tekrari ? (
           <p>محصول به سبد خرید اضافه شد</p>
         ) : (
