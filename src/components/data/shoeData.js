@@ -20,7 +20,8 @@ export const shoeData = [
     newPrice: 50000,
     off: 10000,
     img: shoe1,
-    new: true
+    new: true,
+    size: 38
   },
   {
     name: "shoe2",
@@ -28,7 +29,8 @@ export const shoeData = [
     newPrice: 50000,
     off: 10000,
     img: shoe2,
-    new: true
+    new: true,
+    size: 38
   },
   {
     name: "shoe3",
@@ -36,7 +38,8 @@ export const shoeData = [
     newPrice: 50000,
     off: 10000,
     img: shoe3,
-    new: true
+    new: true,
+    size: 38
   },
   {
     name: "shoe4",
@@ -44,7 +47,8 @@ export const shoeData = [
     newPrice: 50000,
     off: 10000,
     img: shoe4,
-    new: true
+    new: true,
+    size: 40
   },
   {
     name: "shoe5",
@@ -52,7 +56,8 @@ export const shoeData = [
     newPrice: 50000,
     off: 10000,
     img: shoe5,
-    new: true
+    new: true,
+    size: 40
   },
   {
     name: "shoe6",
@@ -60,7 +65,8 @@ export const shoeData = [
     newPrice: 50000,
     off: 10000,
     img: shoe6,
-    new: true
+    new: true,
+    size: 40
   },
   {
     name: "shoe7",
@@ -68,7 +74,8 @@ export const shoeData = [
     newPrice: 50000,
     off: 10000,
     img: shoe7,
-    new: true
+    new: true,
+    size: 40
   },
   {
     name: "shoe8",
@@ -76,55 +83,63 @@ export const shoeData = [
     newPrice: 50000,
     off: 10000,
     img: shoe8,
-    new: true
+    new: true,
+    size: 42
   },
   {
     name: "shoe9",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: shoe9
+    img: shoe9,
+    size: 42
   },
   {
     name: "shoe10",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: shoe10
+    img: shoe10,
+    size: 42
   },
   {
     name: "shoe11",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: shoe11
+    img: shoe11,
+    size: 44
   },
   {
     name: "shoe12",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: shoe12
+    img: shoe12,
+    size: 44
   },
   {
     name: "shoe13",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: shoe13
+    img: shoe13,
+    size: 44
   },
   {
     name: "shoe14",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: shoe14
+    img: shoe14,
+    size: 44
   },
   {
     name: "shoe15",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: shoe15
+    img: shoe15,
+    size: 44
   }
 ];

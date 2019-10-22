@@ -20,14 +20,16 @@ export const tshirtData = [
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: tshirt1
+    img: tshirt1,
+    size: "medium"
   },
   {
     name: "t-shirt2",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: tshirt2
+    img: tshirt2,
+    size: "medium"
   },
   {
     name: "t-shirt3",
@@ -35,14 +37,16 @@ export const tshirtData = [
     newPrice: 50000,
     off: 10000,
     img: tshirt3,
-    new: true
+    new: true,
+    size: "medium"
   },
   {
     name: "t-shirt4",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: tshirt4
+    img: tshirt4,
+    size: "larg"
   },
   {
     name: "t-shirt5",
@@ -50,7 +54,8 @@ export const tshirtData = [
     newPrice: 50000,
     off: 10000,
     img: tshirt5,
-    new: true
+    new: true,
+    size: "larg"
   },
   {
     name: "t-shirt6",
@@ -58,7 +63,8 @@ export const tshirtData = [
     newPrice: 50000,
     off: 10000,
     img: tshirt6,
-    new: true
+    new: true,
+    size: "larg"
   },
   {
     name: "t-shirt7",
@@ -66,62 +72,71 @@ export const tshirtData = [
     newPrice: 50000,
     off: 10000,
     img: tshirt7,
-    new: true
+    new: true,
+    size: "larg"
   },
   {
     name: "t-shirt8",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: tshirt8
+    img: tshirt8,
+    size: "larg"
   },
   {
     name: "t-shirt9",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: tshirt9
+    img: tshirt9,
+    size: "xlarg"
   },
   {
     name: "t-shirt10",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: tshirt10
+    img: tshirt10,
+    size: "xlarg"
   },
   {
     name: "t-shirt11",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: tshirt11
+    img: tshirt11,
+    size: "xlarg"
   },
   {
     name: "t-shirt12",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: tshirt12
+    img: tshirt12,
+    size: "xlarg"
   },
   {
     name: "t-shirt13",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: tshirt13
+    img: tshirt13,
+    size: "xxlarg"
   },
   {
     name: "t-shirt14",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: tshirt14
+    img: tshirt14,
+    size: "xxlarg"
   },
   {
     name: "t-shirt15",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: tshirt15
+    img: tshirt15,
+    size: "xxlarg"
   }
 ];

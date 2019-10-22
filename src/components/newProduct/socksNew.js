@@ -87,12 +87,8 @@ const SocksNew = () => {
       }
     ]
   };
+
   const context = useContext(ContextProject);
-  // let inter = setInterval(() => {
-  //   setonDisplay(!onDisplay);
-  //   clearInterval(inter);
-  //   console.log(inter);
-  // }, 300);
 
   return (
     <SectionTopData>
