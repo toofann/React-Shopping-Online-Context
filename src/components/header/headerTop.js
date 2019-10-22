@@ -3,12 +3,12 @@ import Menu from "./menu";
 import { ReactComponent as CartLogo } from "../../assets/img/icon/iconshopping-cart.svg";
 import { Link } from "react-router-dom";
 import { ContextProject } from "../../App";
+import { AlertAddToCart } from "./uiHeader";
 import {
   CartShopping,
   LogoIcon,
   HeaderComponent
 } from "../uiComponents/ulComponent";
-import { AlertAddToCart } from "./uiHeader";
 
 const HeaderTop = () => {
   const context = useContext(ContextProject);
