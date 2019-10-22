@@ -17,11 +17,12 @@ const SectionTopDataChild = styled.section`
   text-align: center;
   box-shadow: 2px 2px 5px 1px #f5c2dd;
   border-radius: 5px;
+  transition: transform 0.2s;
   margin: 0 auto;
   cursor: pointer;
   & img {
-    width: 98px;
-    height: 98px;
+    width: 90px;
+    height: 90px;
     margin: 0 auto;
   }
   & p,
@@ -34,21 +35,59 @@ const SectionTopDataChild = styled.section`
   & h5 {
     color: #363636;
   }
+  &:hover {
+    & img {
+      transform: scale(1.1);
+      margin-bottom: 13px;
+    }
+  }
 `;
 const TitleTopData = styled.h2`
   color: #323832;
   padding-bottom: 30px;
   text-shadow: 1px 1px 1px black;
+  /* transition-timing-function:ease-in */
 `;
 const SunglassNew = () => {
   var settings = {
     dots: true,
+    lazyLoad: true,
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
-    // autoplay: true,
-    autoplaySpeed: 2000,
-    pauseOnHover: true
+    autoplay: true,
+    speed: 6000,
+    autoplaySpeed: 6000,
+    pauseOnHover: true,
+    arrow: false,
+    // cssEase: "ease-in",
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          dots: false
+        }
+      }
+    ]
   };
   const context = useContext(ContextProject);
   // let inter = setInterval(() => {

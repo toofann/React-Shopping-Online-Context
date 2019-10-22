@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "styled-components/macro";
-const NotFound = () => {
+const Contact = () => {
   return (
     <div
       css={css`
@@ -8,9 +8,9 @@ const NotFound = () => {
         margin-top: 100px;
       `}
     >
-      <h1>صفحه مورد نظر پیدا نشد</h1>
+      <h1>Contact</h1>
     </div>
   );
 };
 
-export default NotFound;
+export default Contact;

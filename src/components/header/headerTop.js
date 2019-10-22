@@ -12,10 +12,11 @@ import { ContextProject } from "../../App";
 
 const AlertAddToCart = styled.div`
   position: absolute;
-  top: 0px;
+  top: 75px;
   right: 0px;
   padding: 20px;
   z-index: 333333333333;
+  box-shadow: 5px 5px 10px 1px #f5c2dd;
   display: ${props => (props.addCart ? "visibled" : "none")};
   border-radius: 3px;
   color: green;

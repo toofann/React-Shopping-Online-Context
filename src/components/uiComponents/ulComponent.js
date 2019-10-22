@@ -35,6 +35,9 @@ export const InputSearch = styled.input`
   border-radius: 5px;
   direction: rtl;
   padding-right: 15px;
+  @media (min-width: 992px) {
+    width: 30%;
+  }
 `;
 export const HeaderComponent = styled.header`
   background-color: #fbe1e9;

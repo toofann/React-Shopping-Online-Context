@@ -44,6 +44,25 @@ const UlComponent = styled.ul`
   &:last-child {
     padding-bottom: 30px;
   }
+  @media (min-width: 992px) {
+    position: relative;
+    width: 600px;
+    display: flex;
+    background-color: transparent;
+    transition: none;
+    align-items: center;
+    /* justify-content: right; */
+    padding: 0px;
+    /* vertical-align: -20px; */
+    & li::before {
+      display: none;
+    }
+    & li {
+      padding: 0px;
+      margin: 0px 10px;
+      width: auto;
+    }
+  }
 `;
 const MenuIcon = styled.img`
   width: 50px;
@@ -52,6 +71,9 @@ const MenuIcon = styled.img`
   padding-top: 5px;
   display: inline-block;
   cursor: pointer;
+  @media (min-width: 992px) {
+    display: none;
+  }
 `;
 const MenuItem = styled.li.attrs(props => {
   return {
@@ -59,6 +81,12 @@ const MenuItem = styled.li.attrs(props => {
   };
 })`
   padding: 20px 10px 0px 0px;
+  @media (min-width: 992px) {
+    & a:hover {
+      color: #a6a6a6;
+    }
+  }
+  /* position: relative; */
 `;
 
 const DropdownMenu = styled.span`
@@ -68,6 +96,15 @@ const DropdownMenu = styled.span`
     content: "\fe3f";
     color: black;
     padding: 8px;
+  }
+  @media (min-width: 992px) {
+    &::after {
+      padding: 0px;
+      /* position: relative; */
+    }
+    &:hover {
+      color: #a6a6a6;
+    }
   }
 `;
 const DropdownMenuOpen = styled.span`
@@ -79,12 +116,35 @@ const DropdownMenuOpen = styled.span`
     padding: 8px;
     vertical-align: -5px;
   }
+  @media (min-width: 992px) {
+    &::after {
+      padding: 0px;
+      /* margin-top: 5px; */
+      vertical-align: 0px;
+
+      /* position: relative; */
+    }
+    &:hover {
+      color: #a6a6a6;
+    }
+  }
 `;
 const Dropdown = styled.div`
   overflow: hidden;
   height: ${props => (props.open ? "160px" : "0px")};
   transition: height 0.7s ease-out 0s;
   position: relative;
+  @media (min-width: 992px) {
+    position: absolute;
+    top: 0px;
+    margin-top: 20px;
+    margin-right: -25px;
+    height: ${props => (props.open ? "30px" : "0px")};
+    /* height: 200px; */
+    /* background-color: black; */
+    /* display: inline-block; */
+    z-index: 999999999999999999999999 !important;
+  }
 `;
 
 const DropdownItem = styled(Link)`
@@ -103,6 +163,20 @@ const DropdownItem = styled(Link)`
     bottom: -8px;
     background-color: #fdacd0;
   }
+  @media (min-width: 992px) {
+    display: inline-block;
+    /* position: absolute; */
+    /* top: 0px; */
+    padding: 0px;
+    padding-left: 10px;
+
+    & :hover::before {
+      display: none;
+    }
+    &:hover {
+      color: #a6a6a6;
+    }
+  }
 `;
 const CloseMenu = styled.span`
   width: 40px;
@@ -110,6 +184,9 @@ const CloseMenu = styled.span`
   float: left;
   padding-left: 10px;
   cursor: pointer;
+  @media (min-width: 992px) {
+    display: none;
+  }
 `;
 
 const Menu = props => {
@@ -125,6 +202,7 @@ const Menu = props => {
     setopenMenu(prev => {
       return !prev;
     });
+    setopenDropDown(false);
   };
   const handleDropdownOpenItem = () => {
     setopenDropDown(!openDropDown);
@@ -177,9 +255,6 @@ const Menu = props => {
         </MenuItem>
         <MenuItem handleCloseMenu={handleCloseMenu}>
           <Link to={"/dashboard"}>داشبورد</Link>
-        </MenuItem>
-        <MenuItem handleCloseMenu={handleCloseMenu}>
-          <Link to={"/darbare"}>درباره ما</Link>
         </MenuItem>
         <MenuItem handleCloseMenu={handleCloseMenu}>
           <Link to={"/contact"}>تماس با ما</Link>

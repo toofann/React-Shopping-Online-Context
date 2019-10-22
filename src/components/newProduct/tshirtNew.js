@@ -19,10 +19,11 @@ const SectionTopDataChild = styled.section`
   box-shadow: 5px 5px 10px 1px #f5c2dd;
   border-radius: 5px;
   margin: 0 auto;
+  transition: transform 0.2s;
   cursor: pointer;
   & img {
-    width: 248px;
-    height: 248px;
+    width: 225px;
+    height: 225px;
     margin: 0 auto;
   }
   & p,
@@ -35,6 +36,12 @@ const SectionTopDataChild = styled.section`
   & h2 {
     color: #363636;
   }
+  &:hover {
+    & img {
+      transform: scale(1.1);
+      margin-bottom: 13px;
+    }
+  }
 `;
 const TitleTopData = styled.h2`
   color: #323832;
@@ -44,12 +51,27 @@ const TitleTopData = styled.h2`
 const TshirtNew = () => {
   var settings = {
     dots: true,
+    lazyLoad: true,
     infinite: true,
-    slidesToShow: 1,
+    slidesToShow: 2,
     slidesToScroll: 1,
-    // autoplay: true,
+    autoplay: true,
+    speed: 7000,
     autoplaySpeed: 2000,
-    pauseOnHover: true
+    pauseOnHover: true,
+    arrow: false,
+    // cssEase: "ease-in",
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      }
+    ]
   };
   const context = useContext(ContextProject);
   // let inter = setInterval(() => {

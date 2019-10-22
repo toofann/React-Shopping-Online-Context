@@ -19,10 +19,11 @@ const SectionTopDataChild = styled.section`
   box-shadow: 5px 5px 10px 1px #f5c2dd;
   border-radius: 5px;
   margin: 0 auto;
+  transition: transform 0.2s;
   cursor: pointer;
   & img {
-    width: 128px;
-    height: 128px;
+    width: 115px;
+    height: 115px;
     margin: 0 auto;
   }
   & p,
@@ -35,6 +36,12 @@ const SectionTopDataChild = styled.section`
   & h4 {
     color: #363636;
   }
+  &:hover {
+    & img {
+      transform: scale(1.1);
+      margin-bottom: 13px;
+    }
+  }
 `;
 const TitleTopData = styled.h2`
   color: #323832;
@@ -44,12 +51,41 @@ const TitleTopData = styled.h2`
 const SocksNew = () => {
   var settings = {
     dots: true,
+    lazyLoad: true,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
-    // autoplay: true,
-    autoplaySpeed: 2000,
-    pauseOnHover: true
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: true,
+    arrow: false,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false
+        }
+      }
+    ]
   };
   const context = useContext(ContextProject);
   // let inter = setInterval(() => {

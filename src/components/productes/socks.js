@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const SectionSocks = styled.main`
   padding: 40px 0px;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   /* text-align: center; */
 `;
@@ -13,17 +14,17 @@ const LinkSocksItem = styled(Link)`
   /* text-align: center; */
 `;
 const SectionSocksChild = styled.section`
-  width: 250px !important;
-  height: 350px;
+  width: 200px !important;
+  height: 300px;
   padding-top: 10px;
   text-align: center;
   box-shadow: 5px 5px 10px 1px #f5c2dd;
   border-radius: 5px;
-  margin: 20px auto;
+  margin: 50px 50px;
   cursor: pointer;
   & img {
-    width: 248px;
-    height: 248px;
+    width: 198px;
+    height: 198px;
     margin: 0 auto;
   }
   & p,

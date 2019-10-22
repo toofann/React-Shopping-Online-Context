@@ -17,6 +17,7 @@ const Search = () => {
 
   return (
     <InputSearch
+      disabled
       value={inputValue}
       onChange={handelCangeInput}
       onClick={handleClickInput}

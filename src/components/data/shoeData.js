@@ -59,21 +59,24 @@ export const shoeData = [
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: shoe6
+    img: shoe6,
+    new: true
   },
   {
     name: "shoe7",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: shoe7
+    img: shoe7,
+    new: true
   },
   {
     name: "shoe8",
     oldPrice: 60000,
     newPrice: 50000,
     off: 10000,
-    img: shoe8
+    img: shoe8,
+    new: true
   },
   {
     name: "shoe9",
