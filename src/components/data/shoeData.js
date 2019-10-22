@@ -13,6 +13,7 @@ import shoe12 from "../../assets/img/shoe/shoe (12).jpg";
 import shoe13 from "../../assets/img/shoe/shoe (13).jpg";
 import shoe14 from "../../assets/img/shoe/shoe (14).jpg";
 import shoe15 from "../../assets/img/shoe/shoe (15).jpg";
+
 export const shoeData = [
   {
     name: "shoe1",

@@ -1,29 +1,18 @@
 import React, { useContext } from "react";
 import Menu from "./menu";
 import { ReactComponent as CartLogo } from "../../assets/img/icon/iconshopping-cart.svg";
-import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { ContextProject } from "../../App";
 import {
   CartShopping,
   LogoIcon,
   HeaderComponent
 } from "../uiComponents/ulComponent";
-import { ContextProject } from "../../App";
+import { AlertAddToCart } from "./uiHeader";
 
-const AlertAddToCart = styled.div`
-  position: absolute;
-  top: 75px;
-  right: 0px;
-  padding: 20px;
-  z-index: 333333333333;
-  box-shadow: 5px 5px 10px 1px #f5c2dd;
-  display: ${props => (props.addCart ? "visibled" : "none")};
-  border-radius: 3px;
-  color: green;
-  background-color: rgba(255, 255, 255, 0.9);
-`;
 const HeaderTop = () => {
   const context = useContext(ContextProject);
+
   return (
     <HeaderComponent>
       <Link to={"/cart"} style={{ position: "relative", paddingTop: "10px" }}>
@@ -35,8 +24,7 @@ const HeaderTop = () => {
             position: "absolute",
             top: "-3px",
             right: "9px"
-          }}
-        >
+          }}>
           {context.cart.length}
         </p>
       </Link>

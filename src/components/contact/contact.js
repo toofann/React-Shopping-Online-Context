@@ -6,8 +6,7 @@ const Contact = () => {
       css={css`
         text-align: center;
         margin-top: 100px;
-      `}
-    >
+      `}>
       <h1>Contact</h1>
     </div>
   );

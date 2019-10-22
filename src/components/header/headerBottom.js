@@ -2,20 +2,15 @@ import React, { useEffect, useContext } from "react";
 import Search from "./search";
 import styled from "styled-components";
 import { ReactComponent as LoginSvg } from "../../assets/img/icon/iconuser.svg";
-
 import { Link } from "react-router-dom";
 import { LoginIcon, TextLogin } from "../uiComponents/ulComponent";
 import { ContextProject } from "../../App";
+import { HeaderComponent } from "./uiHeader";
 
-const HeaderComponent = styled.header`
-  background-color: #feedf3;
-  display: flex;
-  justify-content: space-around;
-  padding: 20px 0px;
-`;
 const HeaderBottom = () => {
   const context = useContext(ContextProject);
   let signInLogin = !!localStorage.getItem("username");
+
   useEffect(() => {
     if (signInLogin) {
       context.setsignIn(true);
@@ -35,7 +30,6 @@ const HeaderBottom = () => {
           <TextLogin>ورود</TextLogin>
         </Link>
       )}
-
       <Search />
     </HeaderComponent>
   );

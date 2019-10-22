@@ -12,6 +12,7 @@ import sunglass11 from "../../assets/img/Sunglasses/Sunglasses (11).jpg";
 import sunglass12 from "../../assets/img/Sunglasses/Sunglasses (12).jpg";
 import sunglass13 from "../../assets/img/Sunglasses/Sunglasses (13).jpg";
 import sunglass14 from "../../assets/img/Sunglasses/Sunglasses (14).jpg";
+
 export const sunglassData = [
   {
     name: "sunglass1",

@@ -12,6 +12,7 @@ import socks11 from "../../assets/img/Socks/Socks (11).jpg";
 import socks12 from "../../assets/img/Socks/Socks (12).jpg";
 import socks13 from "../../assets/img/Socks/Socks (13).jpg";
 import socks14 from "../../assets/img/Socks/Socks (14).jpg";
+
 export const socksData = [
   {
     name: "socks1",

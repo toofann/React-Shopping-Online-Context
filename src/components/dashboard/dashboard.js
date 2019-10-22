@@ -8,8 +8,7 @@ const Dashboard = () => {
       css={css`
         text-align: center;
         margin-top: 100px;
-      `}
-    >
+      `}>
       <h1>
         {context.signIn ? "صفحه داشبورد شما" : "اول وارد حساب کاربری خود بشوید"}
       </h1>
