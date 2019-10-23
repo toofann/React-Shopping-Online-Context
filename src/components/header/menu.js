@@ -35,7 +35,7 @@ const Menu = props => {
   };
 
   return (
-    <nav>
+    <>
       <MenuIcon as={menuSvg} onClick={handleOpenMenu} />
       <UlComponent openMenu={openMenu}>
         <CloseMenu as={closeSvg} onClick={handleCloseMenu}></CloseMenu>
@@ -84,7 +84,7 @@ const Menu = props => {
           <Link to={"/contact"}>تماس با ما</Link>
         </MenuItem>
       </UlComponent>
-    </nav>
+    </>
   );
 };
 
