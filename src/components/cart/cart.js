@@ -3,6 +3,7 @@ import { ContextProject } from "../context";
 import { MainCArtItem, TitleCartItem } from "./uiCart";
 import CartItem from "./cartItem";
 import PayCart from "./payCart";
+import WithErrorHandeling from "../errorHandeling";
 
 const Cart = props => {
   const context = useContext(ContextProject);
@@ -22,4 +23,4 @@ const Cart = props => {
   );
 };
 
-export default Cart;
+export default WithErrorHandeling(Cart);

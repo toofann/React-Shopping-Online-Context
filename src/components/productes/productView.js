@@ -4,6 +4,7 @@ import {
   SectionImegeOpenViewProduct,
   ImageOpenViewProduct
 } from "./uiProducts";
+import WithErrorHandeling from "../errorHandeling";
 
 const ProductView = props => {
   const context = useContext(ContextProject);
@@ -21,4 +22,4 @@ const ProductView = props => {
   );
 };
 
-export default ProductView;
+export default WithErrorHandeling(ProductView);

@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import { ContextProject } from "../context";
 import { css } from "styled-components/macro";
 import Contact from "../contact/contact";
+import WithErrorHandeling from "../errorHandeling";
 
 const Home = lazy(() => import("../home"));
 const Cart = lazy(() => import("../cart/cart"));
@@ -33,13 +34,17 @@ const RouteComponent = () => {
           </h4>
         }>
         <Switch>
-          <Route exact={true} path="/" component={Home} />
+          <Route exact={true} path="/" component={WithErrorHandeling(Home)} />
           <Route path="/cart" render={props => <Cart {...props} />} />
-          <Route path="/login/signup" component={SignUp} />
-          <Route exact={true} path="/login" component={Login} />
-          <Route path="/dashboard" component={Dashboard} />
-          <Route path="/payment" component={Payment} />
-          <Route path="/contact" component={Contact} />
+          <Route path="/login/signup" component={WithErrorHandeling(SignUp)} />
+          <Route
+            exact={true}
+            path="/login"
+            component={WithErrorHandeling(Login)}
+          />
+          <Route path="/dashboard" component={WithErrorHandeling(Dashboard)} />
+          <Route path="/payment" component={WithErrorHandeling(Payment)} />
+          <Route path="/contact" component={WithErrorHandeling(Contact)} />
           {context.topData.map((data, index) => (
             <Route
               key={index}
@@ -75,11 +80,27 @@ const RouteComponent = () => {
               render={props => <ProductView {...props} data={data} />}
             />
           ))}
-          <Route exact={true} path="/shoe" component={Shoe} />
-          <Route exact={true} path="/sunglass" component={Sunglass} />
-          <Route exact={true} path="/socks" component={Socks} />
-          <Route exact={true} path="/tshirt" component={Tshirt} />
-          <Route path="/" component={NotFound} />
+          <Route
+            exact={true}
+            path="/shoe"
+            component={WithErrorHandeling(Shoe)}
+          />
+          <Route
+            exact={true}
+            path="/sunglass"
+            component={WithErrorHandeling(Sunglass)}
+          />
+          <Route
+            exact={true}
+            path="/socks"
+            component={WithErrorHandeling(Socks)}
+          />
+          <Route
+            exact={true}
+            path="/tshirt"
+            component={WithErrorHandeling(Tshirt)}
+          />
+          <Route path="/" component={WithErrorHandeling(NotFound)} />
         </Switch>
       </Suspense>
     </>
