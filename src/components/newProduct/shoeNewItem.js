@@ -10,7 +10,7 @@ const ShoeNewItem = ({ data }) => {
         <del>{data.oldPrice}</del>
         <p>{data.newPrice}</p>
         <span>مشخصات</span>
-      </LinkShoeData>{" "}
+      </LinkShoeData>
     </SectionShoeDataChild>
   );
 };

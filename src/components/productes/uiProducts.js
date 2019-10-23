@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const SectionImegeOpenViewProduct = styled.section`
-  width: 100%;
+  width: 70%;
   margin: 0 auto;
   text-align: center;
   padding: 50px 0px;
@@ -28,11 +28,21 @@ export const SectionImegeOpenViewProduct = styled.section`
       text-shadow: 2px 2px 5px black;
     }
   }
+  @media (min-width: 408px) {
+    & {
+      width: 100%;
+    }
+  }
 `;
 export const ImageOpenViewProduct = styled.img`
-  width: 400px;
-  height: 400px;
+  width: 200px;
+  height: 200px;
   margin: 0 auto;
+  @media (min-width: 408px) {
+    & {
+      width: 400px;
+  height: 400px;
+    }
 `;
 
 export const SectionShoe = styled.main`

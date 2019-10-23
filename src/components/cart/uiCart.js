@@ -12,10 +12,11 @@ export const TitleCartItem = styled.h2`
 `;
 export const SectionCartItem = styled.section`
 display: flex;
+flex-flow:column;
 justify-content: space-around;
 align-items: center;
-width: 90%;
-height: 70px;
+width: 70%;
+/* height: 70px; */
 margin: 20px auto;
 box-shadow: 3px 3px 6px 1px #f5c2dd;
 border-radius: 10px;
@@ -54,8 +55,27 @@ border-radius: 10px;
 }
 & div,
 button {
-  padding: 0px 15px;
+  padding: 0px 5px;
 }
+@media(min-width:390px){
+  & {
+      display: flex;
+flex-flow:row;
+justify-content: space-around;
+align-items: center;
+width: 95%;
+height: 70px;
+margin: 20px auto;
+  }
+
+}
+@media(min-width:768px){
+  & {
+    width: 60%;
+  }
+
+}
+
 `;
 export const PayCartSection = styled.section`
   margin-top: 70px auto;
@@ -85,6 +105,11 @@ cursor: pointer;
   &:hover {
     text-shadow: 2px 2px 5px black;
     background-color:#0acd62;
+  }
+}
+@media(min-width:768px){
+  & {
+    width:35%;
   }
 }
 `;

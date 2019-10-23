@@ -63,12 +63,15 @@ export const TitleFormSignIn = styled.h2`
   margin: 0 auto;
 `;
 export const FormLoginSignIn = styled(Form)`
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   text-align: center;
   padding: 35px;
+  @media (min-width: 768px) {
+    width: 30%;
+  }
 `;
 export const FieldErrorSignIn = styled.div`
   color: red;
@@ -113,10 +116,13 @@ export const OkSignUp = styled.p`
   padding-top: 30px;
 `;
 export const FormSignUp = styled(Form)`
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   text-align: center;
   padding: 35px;
+  @media (min-width: 768px) {
+    width: 30%;
+  }
 `;

@@ -10,7 +10,7 @@ const TshirtItem = ({ data }) => {
         <del>{data.oldPrice}</del>
         <p>{data.newPrice}</p>
         <span>مشخصات</span>
-      </LinkTshirtItem>{" "}
+      </LinkTshirtItem>
     </SectionTshirtChild>
   );
 };

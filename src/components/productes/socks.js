@@ -8,7 +8,6 @@ const Socks = () => {
   return (
     <>
       <TitleSocks>جوراب ها</TitleSocks>
-
       <SectionSocks>
         {context.socksData.map(data => (
           <SocksItem key={data.name} data={data} />
