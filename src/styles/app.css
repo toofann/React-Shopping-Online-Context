@@ -1,10 +1,3 @@
-/* --root {
-one:#FEF0F1;
-one:#F4868D;
-one:#EB2936;
-one:#9F0F18;
-one:#360A0D;
-} */
 @import-normalize;
 @font-face {
   font-family: IRANSans;
@@ -17,17 +10,7 @@ one:#360A0D;
     url("../assets/font/woff/IRANSansWeb_Medium.woff") format("woff"),
     url("../assets/font/ttf/IRANSansWeb_Medium.ttf") format("truetype");
 }
-/* @font-face {
-  font-family: IRANSansb;
-  font-style: normal;
-  font-weight: 500;
-  src: url("../assets/font/eot/IRANSansWeb_Bold.eot");
-  src: url("../assets/font/eot/IRANSansWeb_Bold.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/woff2/IRANSansWeb_Bold.woff2") format("woff2"),
-    url("../assets/font/woff/IRANSansWeb_Bold.woff") format("woff"),
-    url("../assets/font/ttf/IRANSansWeb_Bold.ttf") format("truetype");
-} */
+
 *,
 *::before,
 *::after {
@@ -38,7 +21,6 @@ one:#360A0D;
 body {
   font-family: IRANSans !important;
   font-weight: 300;
-  /* direction: rtl; */
   margin: 0;
   user-select: none;
 }
