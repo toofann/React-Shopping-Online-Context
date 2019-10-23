@@ -1,11 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, memo } from "react";
 import { ContextProject } from "../context";
-import {
-  TitleSocks,
-  SectionSocks,
-  SectionSocksChild,
-  LinkSocksItem
-} from "./uiProducts";
+import { TitleSocks, SectionSocks } from "./uiProducts";
+import SocksItem from "./socksItem";
 
 const Socks = () => {
   const context = useContext(ContextProject);
@@ -15,19 +11,11 @@ const Socks = () => {
 
       <SectionSocks>
         {context.socksData.map(data => (
-          <SectionSocksChild key={data.name}>
-            <LinkSocksItem to={`/socks/${data.name}`}>
-              <img src={data.img} alt={data.name} />
-              <h2>{data.name}</h2>
-              <del>{data.oldPrice}</del>
-              <p>{data.newPrice}</p>
-              <span>مشخصات</span>
-            </LinkSocksItem>{" "}
-          </SectionSocksChild>
+          <SocksItem key={data.name} data={data} />
         ))}
       </SectionSocks>
     </>
   );
 };
 
-export default Socks;
+export default memo(Socks);

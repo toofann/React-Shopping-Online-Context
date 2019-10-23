@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, memo } from "react";
 import { ContextProject } from "../context";
 import { PayCartLink, PayCartSection } from "./uiCart";
 
@@ -33,4 +33,4 @@ const PayCart = () => {
   );
 };
 
-export default PayCart;
+export default memo(PayCart);

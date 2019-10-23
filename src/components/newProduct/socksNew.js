@@ -1,13 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, memo } from "react";
 import { ContextProject } from "../context";
 import Slider from "react-slick";
 import { settingsSocks } from "./uiReactSlick";
-import {
-  SectionSocksData,
-  TitleSocksData,
-  SectionSocksDataChild,
-  LinkSocksData
-} from "./uiNewProduct";
+import { SectionSocksData, TitleSocksData } from "./uiNewProduct";
+import SocksNweItem from "./socksNewItem";
 
 const SocksNew = () => {
   const context = useContext(ContextProject);
@@ -19,19 +15,11 @@ const SocksNew = () => {
         {context.socksData
           .filter(data => data.new === true)
           .map(data => (
-            <SectionSocksDataChild key={data.name}>
-              <LinkSocksData to={`/socks/${data.name}`}>
-                <img src={data.img} alt={data.name} />
-                <h4>{data.name}</h4>
-                <del>{data.oldPrice}</del>
-                <p>{data.newPrice}</p>
-                <span>مشخصات</span>
-              </LinkSocksData>
-            </SectionSocksDataChild>
+            <SocksNweItem key={data.name} data={data} />
           ))}
       </Slider>
     </SectionSocksData>
   );
 };
 
-export default SocksNew;
+export default memo(SocksNew);

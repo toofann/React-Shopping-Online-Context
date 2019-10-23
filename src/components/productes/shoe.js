@@ -1,12 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, memo } from "react";
 import { ContextProject } from "../context";
-import {
-  TitleShoe,
-  FilterSectionShoe,
-  SectionShoe,
-  SectionShoeChild,
-  LinkShoeItem
-} from "./uiProducts";
+import { TitleShoe, FilterSectionShoe, SectionShoe } from "./uiProducts";
+import ShoeItem from "./shoeItem";
 
 const Shoe = () => {
   const [filter, setfilter] = useState("all");
@@ -43,19 +38,11 @@ const Shoe = () => {
       </FilterSectionShoe>
       <SectionShoe>
         {handleFilter().map(data => (
-          <SectionShoeChild key={data.name}>
-            <LinkShoeItem to={`/shoe/${data.name}`}>
-              <img src={data.img} alt={data.name} />
-              <h2>{data.name}</h2>
-              <del>{data.oldPrice}</del>
-              <p>{data.newPrice}</p>
-              <span>مشخصات</span>
-            </LinkShoeItem>{" "}
-          </SectionShoeChild>
+          <ShoeItem key={data.name} data={data} />
         ))}
       </SectionShoe>
     </>
   );
 };
 
-export default Shoe;
+export default memo(Shoe);

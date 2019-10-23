@@ -1,13 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, memo } from "react";
 import { ContextProject } from "../context";
 import Slider from "react-slick";
 import { settingsTshirt } from "./uiReactSlick";
-import {
-  SectionTshirtData,
-  TitleTshirtData,
-  SectionTshirtDataChild,
-  LinkTshirtData
-} from "./uiNewProduct";
+import { SectionTshirtData, TitleTshirtData } from "./uiNewProduct";
+import TshirtNewItem from "./tshirtNewItem";
 
 const TshirtNew = () => {
   const context = useContext(ContextProject);
@@ -19,19 +15,11 @@ const TshirtNew = () => {
         {context.tshirtData
           .filter(data => data.new === true)
           .map(data => (
-            <SectionTshirtDataChild key={data.name}>
-              <LinkTshirtData to={`/tshirt/${data.name}`}>
-                <img src={data.img} alt={data.name} />
-                <h2>{data.name}</h2>
-                <del>{data.oldPrice}</del>
-                <p>{data.newPrice}</p>
-                <span>مشخصات</span>
-              </LinkTshirtData>{" "}
-            </SectionTshirtDataChild>
+            <TshirtNewItem key={data.name} data={data} />
           ))}
       </Slider>
     </SectionTshirtData>
   );
 };
 
-export default TshirtNew;
+export default memo(TshirtNew);

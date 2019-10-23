@@ -1,12 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, memo } from "react";
 import { ContextProject } from "../context";
-import {
-  TitleTshirt,
-  FilterSectionTshirt,
-  SectionTshirt,
-  SectionTshirtChild,
-  LinkTshirtItem
-} from "./uiProducts";
+import { TitleTshirt, FilterSectionTshirt, SectionTshirt } from "./uiProducts";
+import TshirtItem from "./tshirtItem";
 
 const Tshirt = () => {
   const [filter, setfilter] = useState("all");
@@ -43,19 +38,11 @@ const Tshirt = () => {
       </FilterSectionTshirt>
       <SectionTshirt>
         {handleFilter().map(data => (
-          <SectionTshirtChild key={data.name}>
-            <LinkTshirtItem to={`/tshirt/${data.name}`}>
-              <img src={data.img} alt={data.name} />
-              <h2>{data.name}</h2>
-              <del>{data.oldPrice}</del>
-              <p>{data.newPrice}</p>
-              <span>مشخصات</span>
-            </LinkTshirtItem>{" "}
-          </SectionTshirtChild>
+          <TshirtItem key={data.name} data={data} />
         ))}
       </SectionTshirt>
     </>
   );
 };
 
-export default Tshirt;
+export default memo(Tshirt);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import TopProduct from "./topProduct/topProduct";
 import SunglassNew from "./newProduct/sunglassNew";
 import ShoeNew from "./newProduct/shoeNew";
@@ -17,4 +17,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default memo(Home);

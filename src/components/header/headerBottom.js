@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, memo } from "react";
 import Search from "./search";
 import { ReactComponent as LoginSvg } from "../../assets/img/icon/iconuser.svg";
 import { Link } from "react-router-dom";
@@ -33,4 +33,4 @@ const HeaderBottom = () => {
   );
 };
 
-export default HeaderBottom;
+export default memo(HeaderBottom);

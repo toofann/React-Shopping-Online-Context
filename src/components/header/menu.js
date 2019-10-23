@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, withRouter } from "react-router-dom";
+import React, { useState, memo } from "react";
+import { Link } from "react-router-dom";
 import { ReactComponent as menuSvg } from "../../assets/img/icon/iconMenu.svg";
 import { ReactComponent as closeSvg } from "../../assets/img/icon/iconclose.svg";
 import {
@@ -88,4 +88,4 @@ const Menu = props => {
   );
 };
 
-export default withRouter(Menu);
+export default memo(Menu);

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, memo } from "react";
 import Menu from "./menu";
 import { ReactComponent as CartLogo } from "../../assets/img/icon/iconshopping-cart.svg";
 import { Link } from "react-router-dom";
@@ -43,4 +43,4 @@ const HeaderTop = () => {
   );
 };
 
-export default HeaderTop;
+export default memo(HeaderTop);

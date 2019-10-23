@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import {
   topDataNew,
   shoeDataNew,
@@ -62,7 +62,6 @@ const GlobalState = props => {
   const handleDeleteItemCart = index => {
     setcart([...cart.slice(0, index), ...cart.slice(index + 1)]);
   };
-  console.log(props);
   return (
     <ContextProject.Provider
       value={{
@@ -86,4 +85,4 @@ const GlobalState = props => {
   );
 };
 
-export default GlobalState;
+export default memo(GlobalState);

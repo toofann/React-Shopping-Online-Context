@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, memo } from "react";
 import { Formik } from "formik";
 import { Redirect, Link } from "react-router-dom";
 import { ContextProject } from "../context";
@@ -92,4 +92,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default memo(SignIn);

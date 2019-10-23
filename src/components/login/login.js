@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import SignIn from "./signIn";
 
 const Login = () => {
@@ -9,4 +9,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default memo(Login);

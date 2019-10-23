@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import { Formik, ErrorMessage } from "formik";
 import * as yup from "yup";
 import { Redirect } from "react-router-dom";
@@ -109,4 +109,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default memo(SignUp);
