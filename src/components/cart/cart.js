@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ContextProject } from "../../App";
+import { ContextProject } from "../context";
 import { MainCArtItem, TitleCartItem } from "./uiCart";
 import CartItem from "./cartItem";
 import PayCart from "./payCart";

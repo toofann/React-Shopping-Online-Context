@@ -1,6 +1,6 @@
 import React, { useContext, lazy, Suspense } from "react";
 import { Route, Switch } from "react-router-dom";
-import { ContextProject } from "../../App";
+import { ContextProject } from "../context";
 import { css } from "styled-components/macro";
 import Contact from "../contact/contact";
 
@@ -29,12 +29,10 @@ const RouteComponent = () => {
               padding-top: 50px;
               text-align: center;
               /* margin: 0 auto; */
-            `}
-          >
+            `}>
             در حال بارگذاری
           </h4>
-        }
-      >
+        }>
         <Switch>
           <Route exact={true} path="/" component={Home} />
           <Route path="/cart" render={props => <Cart {...props} />} />

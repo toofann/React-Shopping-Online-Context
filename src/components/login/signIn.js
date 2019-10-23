@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Formik } from "formik";
 import { Redirect, Link } from "react-router-dom";
-import { ContextProject } from "../../App";
+import { ContextProject } from "../context";
 import {
   TitleFormSignIn,
   FormLoginSignIn,
@@ -24,7 +24,6 @@ const SignIn = () => {
     setTimeout(() => {
       actions.setSubmitting(false);
     }, 1000);
-
     if (
       values.username === localStorage.getItem("username") ||
       values.password === localStorage.getItem("password")

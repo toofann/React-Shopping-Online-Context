@@ -1,70 +1,12 @@
 import React, { useContext, useState } from "react";
-import { ContextProject } from "../../App";
-import styled, { css } from "styled-components/macro";
-import { Link } from "react-router-dom";
-
-const SectionTshirt = styled.main`
-  padding: 40px 0px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  /* text-align: center; */
-`;
-const LinkTshirtItem = styled(Link)`
-  /* text-align: center; */
-`;
-const SectionTshirtChild = styled.section`
-  width: 200px !important;
-  height: 300px;
-  padding-top: 10px;
-  text-align: center;
-  box-shadow: 5px 5px 10px 1px #f5c2dd;
-  border-radius: 5px;
-  margin: 50px 50px;
-  cursor: pointer;
-  & img {
-    width: 198px;
-    height: 198px;
-    margin: 0 auto;
-  }
-  & p,
-  del {
-    font-size: 15px;
-  }
-  & p {
-    color: green;
-  }
-  & h2 {
-    color: #363636;
-  }
-`;
-const TitleTshirt = styled.h2`
-  color: #323832;
-  padding: 30px 0px 20px 0px;
-  text-shadow: 1px 1px 1px black;
-  text-align: center;
-  margin: 0 auto;
-`;
-const FilterSection = styled.div`
-  /* margin-top: 50px; */
-  text-shadow: 1px 1px 1px black;
-  text-align: center;
-  margin: 50px auto 0px;
-  & p {
-    margin-bottom: 20px;
-  }
-  & button {
-    margin: 5px;
-    padding: 5px 10px;
-    border: none;
-    background-color: #fb5e99;
-    border-radius: 4px;
-  }
-  & button:hover {
-    background-color: #fcbad1;
-    cursor: pointer;
-  }
-`;
+import { ContextProject } from "../context";
+import {
+  TitleTshirt,
+  FilterSectionTshirt,
+  SectionTshirt,
+  SectionTshirtChild,
+  LinkTshirtItem
+} from "./uiProducts";
 
 const Tshirt = () => {
   const [filter, setfilter] = useState("all");
@@ -91,14 +33,14 @@ const Tshirt = () => {
   return (
     <>
       <TitleTshirt>تیشرت ها</TitleTshirt>
-      <FilterSection>
+      <FilterSectionTshirt>
         <p>بر اساس سایز انتخاب کنید</p>
         <button onClick={() => handleSetFilter("all")}>All</button>
         <button onClick={() => handleSetFilter("medium")}>Medium</button>
         <button onClick={() => handleSetFilter("larg")}>Large</button>
         <button onClick={() => handleSetFilter("xlarg")}>X large</button>
         <button onClick={() => handleSetFilter("xxlarg")}>XX large</button>
-      </FilterSection>
+      </FilterSectionTshirt>
       <SectionTshirt>
         {handleFilter().map(data => (
           <SectionTshirtChild key={data.name}>

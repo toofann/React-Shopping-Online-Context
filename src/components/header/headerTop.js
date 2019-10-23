@@ -2,19 +2,19 @@ import React, { useContext } from "react";
 import Menu from "./menu";
 import { ReactComponent as CartLogo } from "../../assets/img/icon/iconshopping-cart.svg";
 import { Link } from "react-router-dom";
-import { ContextProject } from "../../App";
-import { AlertAddToCart } from "./uiHeader";
+import { ContextProject } from "../context";
 import {
+  AlertAddToCart,
+  HeaderTopComponent,
   CartShopping,
-  LogoIcon,
-  HeaderComponent
-} from "../uiComponents/ulComponent";
+  LogoIcon
+} from "./uiHeader";
 
 const HeaderTop = () => {
   const context = useContext(ContextProject);
 
   return (
-    <HeaderComponent>
+    <HeaderTopComponent>
       <Link to={"/cart"} style={{ position: "relative", paddingTop: "10px" }}>
         <CartShopping as={CartLogo}></CartShopping>
         <p
@@ -39,7 +39,7 @@ const HeaderTop = () => {
           <p>محصول در سبد خرید موجود است</p>
         )}
       </AlertAddToCart>
-    </HeaderComponent>
+    </HeaderTopComponent>
   );
 };
 

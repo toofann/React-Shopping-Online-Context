@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ContextProject } from "../../App";
+import { ContextProject } from "../context";
 import { SectionCartItem } from "./uiCart";
 
 const CartItem = ({ index, cart }) => {

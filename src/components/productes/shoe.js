@@ -1,70 +1,13 @@
 import React, { useContext, useState } from "react";
-import { ContextProject } from "../../App";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { ContextProject } from "../context";
+import {
+  TitleShoe,
+  FilterSectionShoe,
+  SectionShoe,
+  SectionShoeChild,
+  LinkShoeItem
+} from "./uiProducts";
 
-const SectionShoe = styled.main`
-  padding: 40px 0px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  /* text-align: center; */
-`;
-const LinkShoeItem = styled(Link)`
-  /* text-align: center; */
-`;
-const SectionShoeChild = styled.section`
-  width: 200px !important;
-  height: 300px;
-  padding-top: 10px;
-  text-align: center;
-  box-shadow: 5px 5px 10px 1px #f5c2dd;
-  border-radius: 5px;
-  margin: 50px 50px;
-  cursor: pointer;
-  & img {
-    width: 198px;
-    height: 198px;
-    margin: 0 auto;
-  }
-  & p,
-  del {
-    font-size: 15px;
-  }
-  & p {
-    color: green;
-  }
-  & h2 {
-    color: #363636;
-  }
-`;
-const TitleShoe = styled.h2`
-  color: #323832;
-  padding: 30px 0px 20px 0px;
-  text-shadow: 1px 1px 1px black;
-  text-align: center;
-  margin: 0 auto;
-`;
-const FilterSection = styled.div`
-  /* margin-top: 50px; */
-  text-shadow: 1px 1px 1px black;
-  text-align: center;
-  margin: 50px auto 0px;
-  & p {
-    margin-bottom: 20px;
-  }
-  & button {
-    margin: 5px;
-    padding: 5px 10px;
-    border: none;
-    background-color: #fb5e99;
-    border-radius: 4px;
-  }
-  & button:hover {
-    background-color: #fcbad1;
-    cursor: pointer;
-  }
-`;
 const Shoe = () => {
   const [filter, setfilter] = useState("all");
   const context = useContext(ContextProject);
@@ -90,14 +33,14 @@ const Shoe = () => {
   return (
     <>
       <TitleShoe>کفش ها</TitleShoe>
-      <FilterSection>
+      <FilterSectionShoe>
         <p>بر اساس سایز انتخاب کنید</p>
         <button onClick={() => handleSetFilter("all")}>All</button>
         <button onClick={() => handleSetFilter(38)}>38</button>
         <button onClick={() => handleSetFilter(40)}>40</button>
         <button onClick={() => handleSetFilter(42)}>42</button>
         <button onClick={() => handleSetFilter(44)}>44</button>
-      </FilterSection>
+      </FilterSectionShoe>
       <SectionShoe>
         {handleFilter().map(data => (
           <SectionShoeChild key={data.name}>

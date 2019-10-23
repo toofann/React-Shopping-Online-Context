@@ -1,8 +1,13 @@
 import React from "react";
+import { css } from "styled-components/macro";
 
 const Payment = () => {
   return (
-    <div style={{ padding: "50px", textAlign: "center" }}>
+    <div
+      css={css`
+        text-align: center;
+        margin-top: 100px;
+      `}>
       <h1>صفحه پرداخت</h1>
     </div>
   );

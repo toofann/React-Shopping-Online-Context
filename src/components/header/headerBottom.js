@@ -1,11 +1,9 @@
 import React, { useEffect, useContext } from "react";
 import Search from "./search";
-import styled from "styled-components";
 import { ReactComponent as LoginSvg } from "../../assets/img/icon/iconuser.svg";
 import { Link } from "react-router-dom";
-import { LoginIcon, TextLogin } from "../uiComponents/ulComponent";
-import { ContextProject } from "../../App";
-import { HeaderComponent } from "./uiHeader";
+import { LoginIcon, TextLogin, HeaderComponent } from "./uiHeader";
+import { ContextProject } from "../context";
 
 const HeaderBottom = () => {
   const context = useContext(ContextProject);

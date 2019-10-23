@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { InputSearch } from "../uiComponents/ulComponent";
+import { InputSearch } from "./uiHeader";
 
 const Search = () => {
   const [inputValue, setInputValue] = useState("جست و جو کنید");

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ContextProject } from "../../App";
+import { ContextProject } from "../context";
 import { css } from "styled-components/macro";
 const Dashboard = () => {
   const context = useContext(ContextProject);
