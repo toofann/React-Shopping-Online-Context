@@ -28,7 +28,6 @@ const RouteComponent = () => {
             css={css`
               padding-top: 50px;
               text-align: center;
-              /* margin: 0 auto; */
             `}>
             در حال بارگذاری
           </h4>
@@ -41,8 +40,6 @@ const RouteComponent = () => {
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/payment" component={Payment} />
           <Route path="/contact" component={Contact} />
-
-          {/* <Route exact={true} path="/tshirt" component={Tshirt} /> */}
           {context.topData.map((data, index) => (
             <Route
               key={index}

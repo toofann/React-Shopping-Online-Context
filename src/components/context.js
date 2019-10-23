@@ -55,11 +55,9 @@ const GlobalState = props => {
         else return { ...cart };
       })
     );
-    cart.map((cart, i) => {
-      if (i === index && cart.number < 2) {
-        handleDeleteItemCart(index);
-      }
-    });
+    cart.map((cart, i) =>
+      i === index && cart.number < 2 ? handleDeleteItemCart(index) : null
+    );
   };
   const handleDeleteItemCart = index => {
     setcart([...cart.slice(0, index), ...cart.slice(index + 1)]);

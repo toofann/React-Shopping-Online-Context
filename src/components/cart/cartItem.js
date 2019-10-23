@@ -6,7 +6,7 @@ const CartItem = ({ index, cart }) => {
   const context = useContext(ContextProject);
 
   return (
-    <SectionCartItem key={index}>
+    <SectionCartItem>
       <img src={cart.img} alt={cart.name} />
       <h3>{cart.name}</h3>
       <div>

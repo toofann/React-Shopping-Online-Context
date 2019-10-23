@@ -15,7 +15,7 @@ const Cart = props => {
         <TitleCartItem>سبد خرید شما خالی است</TitleCartItem>
       )}
       {context.cart.map((cart, index) => (
-        <CartItem cart={cart} index={index} />
+        <CartItem key={cart.name} cart={cart} index={index} />
       ))}
       {context.cart[0] ? <PayCart /> : null}
     </MainCArtItem>
